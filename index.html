@@ -283,26 +283,6 @@ p {
         camera.updateProjectionMatrix();
     };
 
-    // on mouse move
-    function onMouse( e )
-    {
-        var mouse = Utils.mouse( e );
-        to.px =  ( mouse.centerx * 0.95 );
-        to.py = -( mouse.centery * 0.95 );
-    };
-
-    // on click/tap
-    function onPress( e )
-    {
-        to.pz -= 1000;
-    };
-
-    // on click/tap release
-    function onRelease( e )
-    {
-        to.pz += 1000;
-    };
-
     // setup stage
     function setup()
     {
@@ -319,12 +299,6 @@ p {
         renderer.domElement.style["z-index"]  = "-1";
 
         window.addEventListener( "resize", onResize, false );
-        window.addEventListener( "mousemove", onMouse, false );
-        window.addEventListener( "mousedown", onPress, false );
-        window.addEventListener( "touchstart", onPress, false );
-        window.addEventListener( "mouseup", onRelease, false );
-        window.addEventListener( "touchsend", onRelease, false );
-
         document.body.appendChild( renderer.domElement );
     };
 
